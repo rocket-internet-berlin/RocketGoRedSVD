@@ -169,7 +169,7 @@ namespace RedSVD
 				m_matrixU_unnormalized = *ZZ * svdOfC.matrixU();
 			}
 			m_vectorS = svdOfC.singularValues();
-			m_matrixV = *YY * svdOfC.matrixV();
+			m_matrixV = Y * svdOfC.matrixV();
 			if (unnormalized) {
 				m_matrixV_unnormalized = *YY * svdOfC.matrixV();
 			}
