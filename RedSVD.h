@@ -13,7 +13,6 @@
 #include <stdexcept>
 
 typedef Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> MatrixXf;
-typedef Eigen::Matrix<float, Eigen::Dynamic, 1> ScalarXf;
 typedef Eigen::SparseMatrix<float> SpMatrixXf;
 typedef Eigen::Map<MatrixXf> MapTypeXf;
 typedef Eigen::Map<const MatrixXf> MapTypeConstXf;
@@ -59,7 +58,7 @@ public:
     redSvdSparse = NULL;
     tripletList = NULL;
   }
-  
+
   MatrixXf matrixU() {
     if (redSvdSparse) {
       return redSvdSparse->matrixU();
@@ -178,5 +177,14 @@ public:
       }
     }
     return true;
+  }
+
+  ScalarXf getColumnNorms() {
+    if (redSvdSparse) {
+      return redSvdSparse->getNorms();
+    }
+    if (redSvdDense) {
+      return redSvdDense->getNorms();
+    }
   }
 };

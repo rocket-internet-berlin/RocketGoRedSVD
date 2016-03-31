@@ -107,7 +107,7 @@ func TestSparseMatrix32(t *testing.T) {
 	assert.NotNil(t, u)
 	assert.Equal(t, 100, len(u))
 	assert.Equal(t, 10, len(u[0]))
-	
+
 	v = svd.MatrixVNotNormalized()
 	assert.NotNil(t, v)
 	assert.Equal(t, 100, len(v))
@@ -116,6 +116,10 @@ func TestSparseMatrix32(t *testing.T) {
 	singularValues = svd.SingularValues()
 	assert.NotNil(t, singularValues)
 	assert.Equal(t, 10, len(singularValues))
+
+	norms := svd.GetColumnNorms()
+	assert.NotNil(t, norms)
+	assert.Equal(t, 10, len(norms))
 
 	DeleteGoRedSVD(svd)
 }
