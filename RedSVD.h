@@ -182,8 +182,7 @@ public:
   ScalarXf getColumnNorms() {
     if (redSvdSparse) {
       return redSvdSparse->getNorms();
-    }
-    if (redSvdDense) {
+    } else {
       return redSvdDense->getNorms();
     }
   }
