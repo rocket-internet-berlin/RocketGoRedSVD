@@ -67,7 +67,7 @@ Or you can use the included Makefile.
 
 Copyright (c) 2016 Rocket Internet
 
-Please see LICENSE file in repository (GPLv3). The RedSVD-h header
+Please see LICENSE file in repository (MIT). The RedSVD-h header
 is licensed separately using BSD license (see RedVSD-h file for
 license details).
 
